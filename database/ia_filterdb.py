@@ -29,6 +29,7 @@ class Media(Document):
 
     class Meta:
         collection_name = COLLECTION_NAME
+        indexes = ('$file_name', )
 
 
 async def save_file(media):
