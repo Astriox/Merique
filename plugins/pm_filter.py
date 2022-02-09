@@ -64,6 +64,7 @@ async def give_filter(client,message):
                             caption=reply_text or "",
                             reply_markup=InlineKeyboardMarkup(button)
                         )
+                        return
                 
               
     elif name in NO_MORE_PRINTS:
