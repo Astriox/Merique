@@ -66,7 +66,7 @@ async def give_filter(client,message):
                         )
                 except Exception as e:
                     logger.exception(e)
-                break 
+                brea 
     elif name in NO_MORE_PRINTS:
         await message.reply_text("Movie not Released ❗")
 
