@@ -64,8 +64,7 @@ async def give_filter(client,message):
                             caption=reply_text or "",
                             reply_markup=InlineKeyboardMarkup(button)
                         )
-                except Exception as e:
-                    logger.exception(e)
+                
               
     elif name in NO_MORE_PRINTS:
         await message.reply_text("Movie not Released ❗")
