@@ -389,10 +389,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
                 return
             else:
+                buttons = [[
+                    InlineKeyboardButton(text="Join Here", url="https://t.me/joel_noob")
+                ]]
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
-                    caption=f_caption
+                    caption=f_caption,
+                    reply_markup=InlineKeyboardMarkup(buttons)
                     )
                 await query.answer('Check PM, I have sent files in pm',show_alert = True)
         except UserIsBlocked:
@@ -423,10 +427,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{title}"
         await query.answer()
+        buttons = [[
+            InlineKeyboardButton(text="Join Here", url="https://t.me/joel_noob")
+        ]]
         await client.send_cached_media(
             chat_id=query.from_user.id,
             file_id=file_id,
-            caption=f_caption
+            caption=f_caption,
+            reply_markup=InlineKeyboardMarkup(buttons)
             )
 
     elif query.data == "pages":
